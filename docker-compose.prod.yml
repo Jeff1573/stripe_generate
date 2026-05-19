@@ -1,0 +1,10 @@
+services:
+  payurl:
+    image: ${PAYURL_IMAGE:?请设置 PAYURL_IMAGE，例如 ghcr.io/你的github用户名/你的仓库名:latest}
+    container_name: payurl-generator
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 7790
+    ports:
+      - "127.0.0.1:7790:7790"

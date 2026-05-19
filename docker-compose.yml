@@ -1,0 +1,10 @@
+services:
+  payurl:
+    build: .
+    container_name: payurl-generator
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 7790
+    ports:
+      - "127.0.0.1:7790:7790"
